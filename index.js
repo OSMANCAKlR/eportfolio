@@ -10,6 +10,7 @@ function moveBackground(event) {
   for (let i = 0; i < shapes.length; ++i) {
     const isOdd = i % 2 !== 0;
     const boolInt = isOdd ? -1 : 1;
+    // Added rotate after tutorial
     shapes[i].style.transform = `translate(${x * boolInt}px, ${y * boolInt}px) rotate(${x * boolInt * 10}deg)`
   }
 }
@@ -17,10 +18,10 @@ function moveBackground(event) {
 function toggleContrast() {
   contrastToggle = !contrastToggle;
   if (contrastToggle) {
-    document.body.classList += " dark-theme"
+    document.body.classList.remove("dark-theme")
   }
   else {
-    document.body.classList.remove("dark-theme")
+    document.body.classList += " dark-theme"
   }
 }
 
@@ -31,10 +32,10 @@ function contact(event) {
   loading.classList += " modal__overlay--visible";
   emailjs
     .sendForm(
-      "service_80ih0if",
-      "template_d9refyl",
+      "service_qvdmy5y",
+      "template_fd0n1we",
       event.target,
-      "user_K1PoFs8pB2YVWStDxrUls"
+      "Jq1xZa1MpUAcyTXET"
     )
     .then(() => {
       loading.classList.remove("modal__overlay--visible");
